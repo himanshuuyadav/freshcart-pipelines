@@ -1,0 +1,22 @@
+# environment and secrets
+.env
+
+# model artifacts
+*.pkl
+
+# data files
+*.csv
+
+# mage log
+mage.log
+
+# python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# runtime artifacts from mage
+tunnel.log
+cloudflared
+cloudflared-linux-amd64
+.mage_data/
