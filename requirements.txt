@@ -1,3 +1,4 @@
+setuptools
 snowflake-connector-python
 mage-ai
 scikit-learn
