@@ -5,19 +5,16 @@ on: [push]
 jobs:
   test:
     runs-on: ubuntu-latest
-    # Python 3.12 attempted but mage-ai's numpy dependency requires
-    # setuptools.extern.six which was removed in setuptools >= 68 / Python 3.12.
-    # Deviation: using Python 3.11 where the dependency chain installs cleanly.
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Python 3.11
+      - name: Set up Python 3.12
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.12"
 
       - name: Install dependencies
-        run: pip install scikit-learn pandas pytest mage-ai
+        run: pip install -r requirements.txt
 
       - name: Run tests
         run: python -m pytest tests/

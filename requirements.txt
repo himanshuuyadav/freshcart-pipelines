@@ -1,8 +1,4 @@
 setuptools
-snowflake-connector-python
-mage-ai
 scikit-learn
 pandas
 pytest
-pika
-joblib
