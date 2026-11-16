@@ -1,9 +1,10 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
-if 'transformer' not in globals():
-    from mage_ai.data_preparation.decorators import transformer
-if 'test' not in globals():
-    from mage_ai.data_preparation.decorators import test
+try:
+    from mage_ai.data_preparation.decorators import transformer, test
+except ModuleNotFoundError:
+    def transformer(func): return func
+    def test(func): return func
 
 @transformer
 def transform(df, *args, **kwargs):
